@@ -4,8 +4,8 @@ import morgan from 'morgan';
 const app = express();
 app.use(morgan('dev')); // logger
 
-app.get('/', async (req, res) => {
-  res.json({ hello: 'world' });
+app.get('/', (req, res) => {
+  res.json({ hello: 'guys' });
 });
 
 const port = Number(process.env.PORT || 8080);

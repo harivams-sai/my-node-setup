@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && swc ./src -d dist",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "start:docker": "pnpm build && pnpm start",
+    "watch": "watchy --no-init-spawn --debounce 1 -w src -- docker compose restart backend"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "eslint": "^8.47.0",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "watchy": "^0.10.1"
   }
 }
